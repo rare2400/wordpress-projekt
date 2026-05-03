@@ -1,7 +1,12 @@
 <?php
 
-// Activate logo support
+// Activate title tag, featured image and logo support
+add_theme_support("title-tag");
 add_theme_support("custom-logo");
+add_theme_support("post-thumbnails");
+
+// Activate page excerpt
+add_post_type_support("page", "excerpt");
 
 // Custom logo support (in header.php)
 function skogsglantan_theme_setup()
