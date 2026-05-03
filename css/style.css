@@ -64,3 +64,129 @@ a {
     color: var(--color-accent);
     text-decoration: none;
 }
+
+
+
+/* --------------- Header --------------- */
+header {
+    padding: 0 var(--space-sm);
+}
+
+.site-header {
+    background: transparent;
+    width: 100%;
+}
+
+/* Wrapper that holds logo and nav-menu */
+.header-box {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: static;
+}
+
+/* Logotype */
+.custom-logo-link img {
+    display: block;
+    height: 70px;
+    padding: var(--space-xs) 0;
+    width: auto;
+}
+
+/* Fallback site title when no custom logo is uploaded */
+.site-title {
+    color: var(--color-black);
+    font-size: 1.5rem;
+    padding: var(--space-sm) 0;
+}
+
+/* Hamburger/mobile menu icon*/
+.hamburger-icon {
+    cursor: pointer;
+    justify-self: end;
+}
+
+/* --------------- Nav menu --------------- */
+/* Mobile: hidden på default */
+#main-nav {
+    background: var(--color-primary);
+    display: none;
+    font-size: 1em;
+    left: 0;
+    position: absolute;
+    top: 3.5em;
+    width: 100%;
+    z-index: 2;
+}
+
+/* State class toggled by JavaScript when the hamburger-icon is clicked */
+#main-nav.is-open {
+    display: block;
+}
+
+#main-nav ul {
+    list-style: none;
+    text-align: center;
+    width: 100%;
+}
+
+#main-nav a {
+    color: var(--color-black);
+    display: block;
+    font-weight: 600;
+    padding: var(--space-xs) var(--space-sm);
+    text-decoration: none;
+}
+
+#main-nav a:hover {
+    background: #5b6d4996;
+}
+
+/* Active menu item */
+#main-nav .current-menu-item a {
+    opacity: 0.9;
+    text-decoration: solid underline #0000006b 2px;
+}
+
+/* --------------- Media queries: desktop  --------------- */
+@media (min-width: 900px) {
+    .header-box {
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    /* Logo */
+    .custom-logo-link img {
+        height: 80px;
+    }
+
+    /* Hide hamburger-icon */
+    .hamburger-icon {
+        display: none;
+    }
+
+    .icon {
+        display: inline-block !important;
+    }
+
+    /* Replace mobile nav with horizontal Desktop-navbar */
+    #main-nav {
+        align-items: center;
+        background: transparent;
+        display: flex;
+        height: auto;
+        justify-content: space-between;
+        position: static;
+        width: auto;
+    }
+
+    #main-nav ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+    }
+
+    #main-nav a {
+        border-radius: var(--radius);
+    }
+}
