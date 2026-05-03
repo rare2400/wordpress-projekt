@@ -1,0 +1,66 @@
+/* CSS for theme Calming Nature */
+
+/* Variables */
+:root {
+
+    /* Colors */
+    --color-bg: #f1f2ed;
+    --color-primary: #a2ac82;
+    --color-secondary: #5b6d49;
+    --color-accent: #5b496d;
+    --color-accent-hover: #3a274e;
+    --color-dark: #2e2d1d;
+    --color-black: #1d1c11;
+    --color-white: #fff;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+    --color-border: #ddd;
+
+    /* buttons */
+    --color-btn: #c8bfae;
+    --color-btn-hover: #5b5345;
+
+    /* Border radius  */
+    --radius: 6px;
+    --radius-lg: 12px;
+
+    /* Box shadow */
+    --shadow: 0 3px 8px var(--color-shadow);
+    --shadow-lg: 0 0 20px 0 var(--color-shadow);
+
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+
+    /* layout */
+    --max-width: 1200px;
+}
+
+/* --------------- Reset --------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --------------- Basic typography and colors --------------- */
+body {
+    background: var(--color-bg);
+    color: var(--color-dark);
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--color-black);
+    font-family: "Playfair Display", serif;
+}
+
+/* --------------- Links --------------- */
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
