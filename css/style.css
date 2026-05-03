@@ -148,6 +148,42 @@ header {
     text-decoration: solid underline #0000006b 2px;
 }
 
+/* --------------- Footer --------------- */
+footer {
+    background: var(--color-primary);
+    color: var(--color-black);
+    margin-top: var(--space-md);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* Single column grid on mobile */
+.footer-grid {
+    display: grid;
+    gap: var(--space-sm);
+    grid-template-columns: 1fr;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: center;
+}
+
+/* --------------- Media queries: tablet  --------------- */
+@media (min-width: 650px) {
+    /* footer */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 auto;
+        max-width: var(--max-width);
+    }
+
+    .copyright-text {
+        grid-column: 1 / 3;
+        margin-top: var(--space-sm);
+    }
+}
+
 /* --------------- Media queries: desktop  --------------- */
 @media (min-width: 900px) {
     .header-box {
