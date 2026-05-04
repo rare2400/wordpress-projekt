@@ -314,6 +314,16 @@ body:not(.home) main {
     text-decoration: underline;
 }
 
+/* Wraps entire card in a link without any link-styling */
+.card-link {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
 /* --------------- Call-to-action banner --------------- */
 .cta-banner {
     background: var(--color-secondary);
@@ -328,6 +338,11 @@ body:not(.home) main {
 .cta-banner p {
     color: var(--color-white);
     margin: var(--space-sm) auto;
+}
+
+/* category.php-card */
+.category-text {
+    padding: 0 var(--space-sm) var(--space-sm);
 }
 
 /* --------------- Footer --------------- */
@@ -390,6 +405,26 @@ footer {
         padding: var(--space-lg) var(--space-md);
     }
 
+    /* Two-column list layout */
+    .grid-list {
+        grid-template-columns: 1fr 2fr;
+        max-width: 900px;
+    }
+
+    .category-image {
+        grid-column: 1/2;
+    }
+
+    .category-image img {
+        border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+        min-height: 250px;
+    }
+
+    .category-text {
+        grid-column: 2/3;
+        padding: var(--space-sm) var(--space-xs);
+    }
+
     /* footer */
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -405,6 +440,7 @@ footer {
 
 /* --------------- Media queries: desktop  --------------- */
 @media (min-width: 900px) {
+
     .container,
     .front-page-container,
     .header-box {
@@ -455,5 +491,10 @@ footer {
 
     .hero h1 {
         font-size: 2.6rem;
+    }
+
+    /* Category */
+    .category-image img {
+        max-height: 200px;
     }
 }
