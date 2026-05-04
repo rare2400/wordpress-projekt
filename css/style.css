@@ -65,7 +65,27 @@ a {
     text-decoration: none;
 }
 
+/* --------------- Images --------------- */
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
 
+/* --------------- Layout helpers --------------- */
+.container {
+    padding: 0 var(--space-sm);
+    width: 100%;
+}
+
+/* Grid extendet with .grid-2, .grid-3 and .grid-4 modifier classes */
+.grid {
+    display: grid;
+    gap: var(--space-sm);
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    width: 100%;
+}
 
 /* --------------- Header --------------- */
 header {
@@ -172,6 +192,144 @@ body:not(.home) main {
     text-decoration: solid underline #0000006b 2px;
 }
 
+/* --------------- Buttons --------------- */
+/* Primary call-to-action button */
+.cta-btn {
+    background: var(--color-btn);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    color: var(--color-dark);
+    display: inline-block;
+    font-weight: 600;
+    margin-top: var(--space-sm);
+    padding: 0.9rem 1.6rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.cta-btn:hover {
+    background: var(--color-btn-hover);
+    color: var(--color-bg);
+}
+
+
+/* "Read more" link as outlined button */
+.read-more {
+    border-radius: var(--radius);
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    padding: 0.3rem 0.6rem;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    background: var(--color-accent-hover);
+    color: var(--color-white);
+}
+
+
+/* --------------- Hero section (front-page) --------------- */
+.hero {
+    align-items: center;
+    background: center / cover no-repeat;
+    display: flex;
+    min-height: 100vh;
+}
+
+.hero-content {
+    margin: 0 auto;
+    padding-top: 6rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* Text shadow to ensure readability on various background images */
+.hero h1,
+.hero p {
+    color: var(--color-white);
+    text-shadow:
+        0 0 5px var(--color-black),
+        0 0 10px var(--color-black),
+        0 0 20px var(--color-black),
+        0 0 40px var(--color-black);
+}
+
+.hero p {
+    margin: var(--space-sm) auto var(--space-md);
+}
+
+/* Container for hero CTA buttons  */
+.hero-actions {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --------------- Front-page content preview --------------- */
+.preview {
+    padding: var(--space-sm);
+}
+
+/* --------------- Cards --------------- */
+.card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+/* Square-cropped thumbnail inside card */
+.card img {
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+.card-body {
+    padding: var(--space-xs) var(--space-sm) var(--space-sm);
+}
+
+.card h2,
+.card h3 {
+    font-size: 1.2rem;
+}
+
+.card p {
+    margin-bottom: var(--space-sm);
+}
+
+/* Wraps entire card in a link without any link-styling */
+.card-link {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+/* --------------- Call-to-action banner --------------- */
+.cta-banner {
+    background: var(--color-secondary);
+    padding: var(--space-md);
+    text-align: center;
+}
+
+.cta-banner h2 {
+    color: var(--color-white);
+}
+
+.cta-banner p {
+    color: var(--color-white);
+    margin: var(--space-sm) auto;
+}
+
 /* --------------- Footer --------------- */
 footer {
     background: var(--color-primary);
@@ -196,9 +354,40 @@ footer {
 /* --------------- Media queries: tablet  --------------- */
 @media (min-width: 650px) {
 
+    .container {
+        padding: 0 var(--space-md);
+        width: 100%;
+    }
+
     /* Push header down when Wordpress admin-bar is visible */
     .admin-bar .site-header {
         top: 2rem;
+    }
+
+    /* Two-column grids */
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Hero CTA buttons lay side by side */
+    .hero-actions {
+        flex-direction: row;
+        gap: var(--space-sm);
+        justify-content: center;
+    }
+
+    .preview {
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .cta-banner {
+        padding: var(--space-lg) var(--space-md);
     }
 
     /* footer */
@@ -216,6 +405,8 @@ footer {
 
 /* --------------- Media queries: desktop  --------------- */
 @media (min-width: 900px) {
+    .container,
+    .front-page-container,
     .header-box {
         margin: 0 auto;
         max-width: 1200px;
@@ -254,5 +445,15 @@ footer {
 
     #main-nav a {
         border-radius: var(--radius);
+    }
+
+    /* Three-column grids */
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
     }
 }
