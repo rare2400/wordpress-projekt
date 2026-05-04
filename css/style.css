@@ -74,7 +74,26 @@ header {
 
 .site-header {
     background: transparent;
+    left: 0;
+    position: absolute;
+    top: 0;
     width: 100%;
+    z-index: 1000;
+}
+
+/* None-front-page has solid background */
+body:not(.home) .site-header {
+    background: var(--color-primary);
+}
+
+/* Add top padding to main content on non-front-page to prevent it from being hidden behind the absolute header */
+body:not(.home) main {
+    padding-top: var(--space-lg);
+}
+
+/* Push header down when Wordpress admin-bar is visible */
+.admin-bar .site-header {
+    top: 2.9rem;
 }
 
 /* Wrapper that holds logo and nav-menu */
@@ -117,6 +136,11 @@ header {
     top: 3.5em;
     width: 100%;
     z-index: 2;
+}
+
+/* On the front-page the nav-menu sits over the hero-image, keep it transparent */
+.home #main-nav {
+    background: transparent;
 }
 
 /* State class toggled by JavaScript when the hamburger-icon is clicked */
@@ -171,6 +195,12 @@ footer {
 
 /* --------------- Media queries: tablet  --------------- */
 @media (min-width: 650px) {
+
+    /* Push header down when Wordpress admin-bar is visible */
+    .admin-bar .site-header {
+        top: 2rem;
+    }
+
     /* footer */
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
