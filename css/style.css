@@ -87,6 +87,12 @@ img {
     width: 100%;
 }
 
+.section {
+    padding: var(--space-sm);
+    text-align: center;
+    /* ?? */
+}
+
 /* --------------- Header --------------- */
 header {
     padding: 0 var(--space-sm);
@@ -232,6 +238,19 @@ body:not(.home) main {
     color: var(--color-white);
 }
 
+/* Secondary call-to-action button */
+.secondary-btn {
+    background: var(--color-accent);
+    border: none;
+    border-radius: var(--radius);
+    color: var(--color-white);
+    cursor: pointer;
+    padding: 0.9rem var(--space-lg);
+}
+
+.secondary-btn:hover {
+    background: var(--color-accent-hover);
+}
 
 /* --------------- Page header --------------- */
 /* Introductory heading block */
@@ -335,16 +354,6 @@ body:not(.home) main {
     text-decoration: underline;
 }
 
-/* Wraps entire card in a link without any link-styling */
-.card-link {
-    text-decoration: none;
-    color: var(--color-black);
-}
-
-.card-link:hover {
-    text-decoration: underline;
-}
-
 /* --------------- Call-to-action banner --------------- */
 .cta-banner {
     background: var(--color-secondary);
@@ -361,9 +370,109 @@ body:not(.home) main {
     margin: var(--space-sm) auto;
 }
 
+/* --------------- Pagination --------------- */
+/* Spans full grid so it allways sits below all columns */
+.pagination {
+    grid-column: 1 / -1;
+    margin: var(--space-md);
+    text-align: center;
+}
+
+.pagination a {
+    color: var(--color-accent);
+}
+
+.pagination a:hover {
+    text-decoration: underline;
+}
+
+/* --------------- Single pages (rooms and activities) --------------- */
+.single-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+    margin: var(--space-md) 0;
+    text-align: left;
+}
+
+.single-content h1 {
+    text-align: center;
+}
+
+.room-description,
+.activity-description {
+    padding: var(--space-sm);
+}
+
+.single-featured-image img,
+.activity-featured-image img {
+    border-radius: var(--radius-lg);
+    max-height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.single-meta h2 {
+    font-size: 1.2rem;
+}
+
+.activity-description ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    list-style: none;
+}
+
+.booking-cta {
+    margin-top: var(--space-sm);
+    text-align: center;
+}
+
+/* Back link navigation */
+.back-link a {
+    color: var(--color-accent);
+    margin: var(--space-md) 0;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
 /* category.php-card */
 .category-text {
     padding: 0 var(--space-sm) var(--space-sm);
+}
+
+/* --------------- News post (single.php) --------------- */
+.post-content {
+    margin: var(--space-md) auto 0;
+}
+
+.post-content a:hover {
+    text-decoration: underline;
+}
+
+.post-image img {
+    border-radius: var(--radius) var(--radius) 0 0;
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.author-wrapper {
+    align-items: end;
+    display: flex;
+    justify-content: space-between;
+}
+
+.author-wrapper a {
+    margin-bottom: var(--space-xs);
+}
+
+.post-author {
+    color: var(--color-dark);
+    font-size: 0.9rem;
+    text-align: left;
 }
 
 /* --------------- Static pages (page.php, om oss, kontakt) --------------- */
@@ -510,6 +619,12 @@ footer {
         padding: var(--space-lg) var(--space-md);
     }
 
+    /* News post (single.php) */
+    .post-wrapper {
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
     /* Static pages (page.php, om oss, kontakt) */
     .page-body {
         max-width: 900px;
@@ -566,7 +681,7 @@ footer {
     .front-page-container,
     .header-box {
         margin: 0 auto;
-        max-width: 1200px;
+        max-width: var(--max-width);
     }
 
     /* Logo */
@@ -612,6 +727,17 @@ footer {
 
     .hero h1 {
         font-size: 2.6rem;
+    }
+
+    /* Single pages - rooms and activities */
+    .single-content {
+        gap: var(--space-sm);
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .single-featured-image img,
+    .activity-featured-image img {
+        max-height: 500px;
     }
 
     /* Category */
