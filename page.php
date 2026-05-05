@@ -7,9 +7,8 @@
             <div class="page-header">
                 <!-- Title and excerpt if it exists -->
                 <h1><?php the_title(); ?></h1>
-                <?php if (has_excerpt()) : ?>
-                    <p><?php the_excerpt(); ?></p>
-                <?php endif; ?>
+                <?php if (has_excerpt()) : the_excerpt();
+                endif; ?>
             </div>
             <div class="page-body">
                 <?php
