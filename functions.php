@@ -39,3 +39,64 @@ function register_my_menus()
     );
 }
 add_action("init", "register_my_menus");
+
+
+// Register custom post types for "Boende", "Aktiviteter" and "Personal"
+function register_rum_cpt()
+{
+    $labels = [
+        "name" => "Boende",
+        "singular_name" => "Rum",
+        "menu_name" => "Boende",
+        "add_new" => "Lägg till",
+        "add_new_item" => "Lägg till nytt rum",
+        "edit_item" => "Redigera rum",
+        "new_item" => "Nytt rum",
+        "view_item" => "Visa rum",
+        "all_items" => "Alla rum",
+    ];
+
+    $args = [
+        "labels" => $labels,
+        "public" => true,
+        "has_archive" => true,
+        "rewrite" => ["slug" => "boende"],
+        "menu_icon" => "dashicons-admin-home",
+        "supports" => ["title", "editor", "thumbnail", "excerpt"],
+        "show_in_rest" => true,
+    ];
+
+    register_post_type("rum", $args);
+}
+
+add_action("init", "register_rum_cpt");
+
+// CPT for "Aktiviteter"
+function register_aktivitet_cpt()
+{
+    $labels = [
+        "name" => "Aktiviteter",
+        "singular_name" => "Aktiviteter",
+        "menu_name" => "Aktiviteter",
+        "add_new" => "Lägg till",
+        "add_new_item" => "Lägg till aktivitet",
+        "edit_item" => "Redigera aktivitet",
+        "new_item" => "Ny aktivitet",
+        "view_item" => "Visa aktivitet",
+        "all_items" => "Alla aktiviteter",
+    ];
+
+    $args = [
+        "labels" => $labels,
+        "public" => true,
+        "has_archive" => true,
+        "rewrite" => ["slug" => "aktiviteter"],
+        "menu_icon" => "dashicons-palmtree",
+        "supports" => ["title", "editor", "thumbnail", "excerpt"],
+        "show_in_rest" => true,
+    ];
+
+    register_post_type("aktivitet", $args);
+}
+
+add_action("init", "register_aktivitet_cpt");
