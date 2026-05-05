@@ -391,10 +391,6 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .grid-4 {
-        max-width: 700px;
-    }
-
     .hero h1 {
         font-size: 2.2rem;
     }
@@ -492,15 +488,11 @@ footer {
         border-radius: var(--radius);
     }
 
-    /* Three-column grids */
-    .grid-3 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* Four-column grids */
-    .grid-4 {
-        grid-template-columns: repeat(4, 1fr);
-    }
+   /* Three-column grids */
+   .grid-3,
+   .grid-4 {
+       grid-template-columns: repeat(3, 1fr);
+   }
 
     .hero h1 {
         font-size: 2.6rem;
@@ -510,4 +502,15 @@ footer {
     .category-image img {
         max-height: 200px;
     }
+}
+
+/* --------------- Media queries: large desktop  --------------- */
+@media (min-width: 1200px) {
+
+    /* Four-column grids */
+    .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: var(--max-width);
+    }
+
 }
