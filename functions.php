@@ -20,6 +20,15 @@ function skogsglantan_theme_setup()
 }
 add_action('after_setup_theme', 'skogsglantan_theme_setup');
 
+// Activate hero-image
+$args = array(
+    'default-image' => get_template_directory_uri() . '/img/hero-office.jpg',
+    'width'         => 1920,
+    'height'        => 900,
+    'uploads'       => true
+);
+add_theme_support('custom-header', $args);
+
 // Activate custom menu support
 function register_my_menus()
 {
