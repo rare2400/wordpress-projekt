@@ -366,6 +366,24 @@ body:not(.home) main {
     padding: 0 var(--space-sm) var(--space-sm);
 }
 
+/* --------------- Static pages (page.php, om oss, kontakt) --------------- */
+.page-body {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    color: #444;
+    margin: var(--space-sm) auto;
+    padding: 1.2rem;
+}
+
+.page-body p {
+    margin-bottom: var(--space-sm);
+}
+
+.page-body ul {
+    padding: 0 var(--space-sm) var(--space-sm);
+}
+
 /* --------------- Contact-page --------------- */
 .contact-section {
     padding: var(--space-md) var(--space-sm);
@@ -465,6 +483,14 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .page-header {
+        max-width: 700px;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
     .hero h1 {
         font-size: 2.2rem;
     }
@@ -482,6 +508,12 @@ footer {
 
     .cta-banner {
         padding: var(--space-lg) var(--space-md);
+    }
+
+    /* Static pages (page.php, om oss, kontakt) */
+    .page-body {
+        max-width: 900px;
+        padding: 1.2rem var(--space-md);
     }
 
     /* Contact-page */
@@ -572,11 +604,11 @@ footer {
         border-radius: var(--radius);
     }
 
-   /* Three-column grids */
-   .grid-3,
-   .grid-4 {
-       grid-template-columns: repeat(3, 1fr);
-   }
+    /* Three-column grids */
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
     .hero h1 {
         font-size: 2.6rem;
