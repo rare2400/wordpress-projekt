@@ -212,6 +212,11 @@ body:not(.home) main {
     color: var(--color-bg);
 }
 
+/* cta-button wrapper to center it on the page */
+.cta-wrapper {
+    display: flex;
+    justify-content: center;
+}
 
 /* "Read more" link as outlined button */
 .read-more {
@@ -386,6 +391,10 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .grid-4 {
+        max-width: 700px;
+    }
+
     .hero h1 {
         font-size: 2.2rem;
     }
@@ -484,9 +493,13 @@ footer {
     }
 
     /* Three-column grids */
-    .grid-3,
-    .grid-4 {
+    .grid-3 {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Four-column grids */
+    .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
     }
 
     .hero h1 {
