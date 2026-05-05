@@ -11,7 +11,7 @@
     <div class="container">
         <?php if (have_posts()) : ?>
 
-            <div class="grid grid-4">
+            <div class="grid grid-3">
 
                 <?php while (have_posts()) : the_post(); ?>
 
