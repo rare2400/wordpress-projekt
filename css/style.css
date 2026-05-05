@@ -233,6 +233,22 @@ body:not(.home) main {
 }
 
 
+/* --------------- Page header --------------- */
+/* Introductory heading block */
+.page-header {
+    margin: var(--space-md) auto var(--space-sm);
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 1.6rem;
+}
+
+.page-header p {
+    color: var(--color-dark);
+    margin: 0 auto;
+}
+
 /* --------------- Hero section (front-page) --------------- */
 .hero {
     align-items: center;
@@ -350,6 +366,64 @@ body:not(.home) main {
     padding: 0 var(--space-sm) var(--space-sm);
 }
 
+/* --------------- Contact-page --------------- */
+.contact-section {
+    padding: var(--space-md) var(--space-sm);
+}
+
+.contact-info {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: var(--space-sm);
+}
+
+.contact-info h2 {
+    margin-bottom: var(--space-xs);
+}
+
+/* Contact form */
+.contact-info form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.contact-info label {
+    color: var(--color-dark);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.contact-info input,
+.contact-info textarea {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 0.95rem;
+    margin-bottom: var(--space-sm);
+    padding: 0.8rem;
+    resize: vertical;
+    width: 100%;
+}
+
+.contact-info textarea {
+    min-height: 140px;
+}
+
+.contact-info input[type="submit"] {
+    background: var(--color-accent);
+    border: none;
+    border-radius: var(--radius);
+    color: var(--color-white);
+    cursor: pointer;
+    padding: 0.9rem var(--space-sm);
+}
+
+.contact-info input[type="submit"]:hover {
+    background: var(--color-accent-hover);
+}
+
 /* --------------- Footer --------------- */
 footer {
     background: var(--color-primary);
@@ -408,6 +482,16 @@ footer {
 
     .cta-banner {
         padding: var(--space-lg) var(--space-md);
+    }
+
+    /* Contact-page */
+    .contact-section {
+        margin: 0 auto;
+        max-width: var(--max-width);
+    }
+
+    .contact-info {
+        padding: 1.2rem var(--space-md) var(--space-md);
     }
 
     /* Two-column list layout */
@@ -501,6 +585,10 @@ footer {
     /* Category */
     .category-image img {
         max-height: 200px;
+    }
+
+    .contact-info {
+        padding: 1.2rem 3rem;
     }
 }
 
