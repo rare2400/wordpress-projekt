@@ -62,10 +62,11 @@
             // Reset post data to ensure other queries work correctly
             wp_reset_postdata();
             ?>
-
-            <a href="<?php echo esc_url(home_url("/boende")); ?>" class="cta-btn">
-                <?php esc_html_e("Se våra rum", "skogsglantan"); ?>
-            </a>
+            <div class="cta-wrapper">
+                <a href="<?php echo esc_url(home_url("/boende")); ?>" class="cta-btn">
+                    <?php esc_html_e("Se våra rum", "skogsglantan"); ?>
+                </a>
+            </div>
         </section>
 
         <!-- Preview of activities -->
@@ -93,16 +94,16 @@
                             endif;
                             ?>
                             <div class="card-body">
-                            <!-- Activity title -->
-                            <h3><?php the_title(); ?></h3>
+                                <!-- Activity title -->
+                                <h3><?php the_title(); ?></h3>
 
-                            <p>
-                                <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
-                            </p>
-                            <a href="<?php the_permalink(); ?>" class="read-more">
-                                <?php esc_html_e("Läs mer", "skogsglantan"); ?>
-                                <span class="screen-reader-text"> <?php the_title(); ?></span>
-                            </a>
+                                <p>
+                                    <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
+                                </p>
+                                <a href="<?php the_permalink(); ?>" class="read-more">
+                                    <?php esc_html_e("Läs mer", "skogsglantan"); ?>
+                                    <span class="screen-reader-text"> <?php the_title(); ?></span>
+                                </a>
                             </div>
                         </article>
 
@@ -113,9 +114,10 @@
             // Reset post data to ensure other queries work correctly
             wp_reset_postdata();
             ?>
-
-            <a class="cta-btn" href="<?php echo esc_url(home_url("/aktiviteter")); ?>">
-                <?php esc_html_e("Se alla aktiviteter", "skogsglantan"); ?></a>
+            <div class="cta-wrapper">
+                <a class="cta-btn" href="<?php echo esc_url(home_url("/aktiviteter")); ?>">
+                    <?php esc_html_e("Se alla aktiviteter", "skogsglantan"); ?></a>
+            </div>
         </section>
 
         <!-- Preview of about us -->
@@ -179,10 +181,11 @@
             // Reset post data to ensure other queries work correctly
             wp_reset_postdata();
             ?>
-
-            <a class="cta-btn" href="<?php echo esc_url(get_category_link(get_cat_ID("nyheter"))); ?>">
-                <?php esc_html_e("Se alla nyheter", "skogsglantan") ?>
-            </a>
+            <div class="cta-wrapper">
+                <a class="cta-btn" href="<?php echo esc_url(get_category_link(get_cat_ID("nyheter"))); ?>">
+                    <?php esc_html_e("Se alla nyheter", "skogsglantan") ?>
+                </a>
+            </div>
 
         </section>
 
