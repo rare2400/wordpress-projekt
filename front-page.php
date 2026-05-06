@@ -40,7 +40,9 @@
                             <?php
                             // Show the featured image if it exists
                             if (has_post_thumbnail()) {
-                                the_post_thumbnail("medium");
+                                the_post_thumbnail("card", [
+                                    "alt" => get_the_title()
+                                ]);
                             } ?>
                             <div class="card-body">
                                 <!-- Room title -->
@@ -90,7 +92,9 @@
                             <?php
                             // Show the featured image if it exists
                             if (has_post_thumbnail()) :
-                                the_post_thumbnail("medium");
+                                the_post_thumbnail("card", [
+                                    "alt" => get_the_title()
+                                ]);
                             endif;
                             ?>
                             <div class="card-body">
@@ -155,7 +159,9 @@
                             <?php
                             // Shows the featured image if it exists
                             if (has_post_thumbnail()) :
-                                the_post_thumbnail("medium");
+                                the_post_thumbnail("card", [
+                                    "alt" => get_the_title()
+                                ]);
                             endif; ?>
                             <div class="card-body">
                                 <!-- News title -->
