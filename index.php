@@ -17,7 +17,9 @@
                         <?php
                         // Check if the post has a featured image and display it
                         if (has_post_thumbnail()) {
-                            the_post_thumbnail("medium");
+                            the_post_thumbnail("card", [
+                                "alt" => get_the_title()
+                            ]);
                         }
                         ?>
                         <div class="card-body">

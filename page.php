@@ -14,7 +14,9 @@
                 <?php
                 // Show the featured image if it exists
                 if (has_post_thumbnail()) :
-                    the_post_thumbnail("medium");
+                    the_post_thumbnail("card", [
+                        "alt" => get_the_title()
+                    ]);
                 endif; ?>
                 <div class="page-text">
                     <?php

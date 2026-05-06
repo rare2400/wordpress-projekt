@@ -15,7 +15,9 @@
                             <?php
                             // Check if the post has a thumbnail and display it
                             if (has_post_thumbnail()) :
-                                the_post_thumbnail("large");
+                                the_post_thumbnail("large", [
+                                    "alt" => get_the_title()
+                                ]);
                             endif;
                             ?>
                         </div>
@@ -28,12 +30,12 @@
 
                             <?php
                             // if the post belongs to the category "Nyheter", display author and date, and a link to the category page
-                            if (in_category('nyheter')) :
+                            if (in_category("nyheter")) :
                             ?>
                                 <div class="author-wrapper">
                                     <span class="post-author">Postat av: <?php the_author(); ?> <br> <?php the_date(); ?></span>
 
-                                    <a href="<?php echo get_category_link(get_cat_ID('Nyheter')); ?>">
+                                    <a href="<?php echo get_category_link(get_cat_ID("Nyheter")); ?>">
                                         Läs mer nyheter
                                     </a>
 
