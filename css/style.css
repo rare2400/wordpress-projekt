@@ -399,6 +399,12 @@ body:not(.home) main {
     text-decoration: underline;
 }
 
+.back-link .icon,
+.pagination .icon {
+    fill: var(--color-accent);
+    width: 20px;
+}
+
 /* --------------- Single pages (rooms and activities) --------------- */
 .single-content {
     display: grid;
@@ -417,7 +423,7 @@ body:not(.home) main {
     padding: var(--space-sm);
 }
 
-.single-featured-image img,
+.room-featured-image img,
 .activity-featured-image img {
     border-radius: var(--radius-lg);
     max-height: 300px;
@@ -429,6 +435,10 @@ body:not(.home) main {
     font-size: 1.2rem;
 }
 
+.single-meta ul {
+    list-style: none;
+}
+
 .activity-description ul {
     display: flex;
     flex-direction: column;
@@ -437,6 +447,7 @@ body:not(.home) main {
 }
 
 .booking-cta {
+    grid-column: span 2;
     margin-top: var(--space-sm);
     text-align: center;
 }
@@ -662,6 +673,23 @@ footer {
         padding: var(--space-lg) var(--space-md);
     }
 
+    /* Single pages - rooms and activities */
+    .single-content {
+        gap: var(--space-sm);
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .room-featured-image img,
+    .activity-featured-image img {
+        max-height: 300px;
+        min-height: 200px;
+    }
+
+    .room-description,
+    .activity-description {
+        grid-column: span 2;
+    }
+
     /* News post (single.php) */
     .post-wrapper {
         max-width: 760px;
@@ -782,15 +810,10 @@ footer {
         font-size: 2.6rem;
     }
 
-    /* Single pages - rooms and activities */
     .single-content {
-        gap: var(--space-sm);
         grid-template-columns: 2fr 1fr;
-    }
-
-    .single-featured-image img,
-    .activity-featured-image img {
-        max-height: 500px;
+        margin: var(--space-md) auto;
+        max-width: 900px;
     }
 
     /* Category */
