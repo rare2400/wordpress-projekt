@@ -72,6 +72,14 @@ img {
     max-width: 100%;
 }
 
+/* --------------- Icons --------------- */
+.icon {
+    fill: var(--color-black);
+    height: 25px;
+    width: 25px;
+    transform: translateY(6px);
+}
+
 /* --------------- Layout helpers --------------- */
 .container {
     padding: 0 var(--space-sm);
@@ -314,6 +322,11 @@ body:not(.home) main {
     padding: var(--space-sm);
 }
 
+.preview h2 {
+    margin-bottom: var(--space-sm);
+    text-align: center;
+}
+
 /* --------------- Cards --------------- */
 .card {
     background: var(--color-white);
@@ -493,6 +506,36 @@ body:not(.home) main {
     padding: 0 var(--space-sm) var(--space-sm);
 }
 
+/* Staff section on about page */
+.staff-section h2 {
+    margin-bottom: var(--space-sm);
+}
+
+.staff-section h2,
+.staff-section h3,
+.role {
+    text-align: center;
+}
+
+.staff-card {
+    padding: var(--space-sm);
+}
+
+.staff-card img {
+    border-radius: 50%;
+    margin: 0 auto var(--space-sm);
+    max-width: 250px;
+    object-fit: cover;
+}
+
+.staff-card a {
+    color: var(--color-black);
+}
+
+.staff-card a:hover {
+    text-decoration: underline;
+}
+
 /* --------------- Contact-page --------------- */
 .contact-section {
     padding: var(--space-md) var(--space-sm);
@@ -631,6 +674,16 @@ footer {
         padding: 1.2rem var(--space-md);
     }
 
+    /* Staff section on about page */
+    .staff-section {
+        margin: 0 auto;
+        max-width: 900px;
+    }
+
+    .staff-card img {
+        max-width: 300px;
+    }
+
     /* Contact-page */
     .contact-section {
         margin: 0 auto;
@@ -756,6 +809,11 @@ footer {
     /* Four-column grids */
     .grid-4 {
         grid-template-columns: repeat(4, 1fr);
+        max-width: var(--max-width);
+    }
+
+    /* Staff section on about page */
+    .staff-section {
         max-width: var(--max-width);
     }
 
