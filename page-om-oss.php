@@ -47,7 +47,9 @@
                             <article class="card staff-card">
 
                                 <?php if (has_post_thumbnail()) :
-                                    the_post_thumbnail("medium");
+                                    the_post_thumbnail("thumbnail", [
+                                        "alt" => get_the_title()
+                                    ]);
                                 endif; ?>
 
                                 <h3><?php the_title(); ?></h3>
