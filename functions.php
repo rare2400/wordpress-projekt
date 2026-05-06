@@ -100,3 +100,29 @@ function register_aktivitet_cpt()
 }
 
 add_action("init", "register_aktivitet_cpt");
+
+// CPT for "Personal"
+function register_personal_cpt()
+{
+    $labels = [
+        "name" => "Personal",
+        "singular_name" => "Person",
+        "add_new_item" => "Lägg till person",
+        "edit_item" => "Redigera person",
+        "all_items" => "All personal",
+    ];
+
+    $args = [
+        "labels" => $labels,
+        "public" => true,
+        "has_archive" => false,
+        "rewrite" => ["slug" => "personal"],
+        "menu_icon" => "dashicons-groups",
+        "supports" => ["title", "editor", "thumbnail", "excerpt"],
+        "show_in_rest" => true,
+    ];
+
+    register_post_type("personal", $args);
+}
+
+add_action("init", "register_personal_cpt");
