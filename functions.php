@@ -11,23 +11,30 @@ add_post_type_support("page", "excerpt");
 // Custom logo support (in header.php)
 function skogsglantan_theme_setup()
 {
-    add_theme_support('custom-logo', [
-        'height'      => 100,
-        'width'       => 300,
-        'flex-height' => true,
-        'flex-width'  => true,
+    add_theme_support("custom-logo", [
+        "height"      => 100,
+        "width"       => 300,
+        "flex-height" => true,
+        "flex-width"  => true,
     ]);
 }
-add_action('after_setup_theme', 'skogsglantan_theme_setup');
+add_action("after_setup_theme", "skogsglantan_theme_setup");
+
 
 // Activate hero-image
 $args = array(
-    'default-image' => get_template_directory_uri() . '/img/hero-office.jpg',
-    'width'         => 1920,
-    'height'        => 900,
-    'uploads'       => true
+    "default-image" => get_template_directory_uri() . "/img/hero-office.jpg",
+    "width"         => 1920,
+    "height"        => 900,
+    "uploads"       => true
 );
-add_theme_support('custom-header', $args);
+add_theme_support("custom-header", $args);
+
+// Custom size images
+add_image_size("hero", 1920, 900, true);
+add_image_size("card", 800, 500, true);
+add_image_size("thumbnail", 400, 300, true);
+
 
 // Activate custom menu support
 function register_my_menus()
