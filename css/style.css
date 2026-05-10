@@ -549,7 +549,7 @@ body:not(.home) main {
 
 /* --------------- Contact-page --------------- */
 .contact-section {
-    padding: var(--space-md) var(--space-sm);
+    margin: 0 var(--space-sm);
 }
 
 .contact-info {
@@ -561,6 +561,10 @@ body:not(.home) main {
 
 .contact-info h2 {
     margin-bottom: var(--space-xs);
+}
+
+.contact-info ul {
+    padding: 0 var(--space-sm);
 }
 
 /* Contact form */
@@ -577,6 +581,7 @@ body:not(.home) main {
 }
 
 .contact-info input,
+.contact-info select,
 .contact-info textarea {
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
