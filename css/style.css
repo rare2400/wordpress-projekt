@@ -559,7 +559,8 @@ body:not(.home) main {
     padding: var(--space-sm);
 }
 
-.contact-info h2 {
+.contact-info h2,
+.contact-info p {
     margin-bottom: var(--space-xs);
 }
 
@@ -603,11 +604,20 @@ body:not(.home) main {
     border-radius: var(--radius);
     color: var(--color-white);
     cursor: pointer;
+    margin: 0;
     padding: 0.9rem var(--space-sm);
 }
 
 .contact-info input[type="submit"]:hover {
     background: var(--color-accent-hover);
+}
+
+/* leaflet map */
+.leaflet-container {
+    border-radius: var(--radius);
+    margin-bottom: var(--space-sm);
+    min-height: 400px;
+    width: 100%;
 }
 
 /* --------------- Footer --------------- */
