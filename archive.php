@@ -18,7 +18,7 @@
         // Check if there are posts in the current archive
         if (have_posts()) : ?>
 
-            <div class="grid grid-3">
+            <div class="grid grid-2 grid-3">
                 <?php
                 // Loop through all posts and fetch data
                 while (have_posts()) : the_post(); ?>
