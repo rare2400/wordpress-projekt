@@ -35,28 +35,28 @@
             <?php if ($rooms->have_posts()) : ?>
                 <div class="grid grid-3">
                     <?php while ($rooms->have_posts()) : $rooms->the_post(); ?>
-                        <article class="card">
-                            <!-- <a href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true"></a> -->
-                            <?php
-                            // Show the featured image if it exists
-                            if (has_post_thumbnail()) {
-                                the_post_thumbnail("card", [
-                                    "alt" => get_the_title()
-                                ]);
-                            } ?>
-                            <div class="card-body">
-                                <!-- Room title -->
-                                <h3><?php the_title(); ?></h3>
+                        <a href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true" class="card-link">
+                            <section class="card">
+                                <?php
+                                // Show the featured image if it exists
+                                if (has_post_thumbnail()) {
+                                    the_post_thumbnail("card", [
+                                        "alt" => get_the_title()
+                                    ]);
+                                } ?>
+                                <div class="card-body">
+                                    <!-- Room title -->
+                                    <h3><?php the_title(); ?></h3>
 
-                                <p>
-                                    <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
-                                </p>
-                                <a href="<?php the_permalink(); ?>" class="read-more">
-                                    <?php esc_html_e("Läs mer", "skogsglantan"); ?>
-                                    <span class="screen-reader-text"> <?php the_title(); ?></span>
-                                </a>
-                            </div>
-                        </article>
+                                    <p>
+                                        <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
+                                    </p>
+                                    <span class="read-more">
+                                        <?php esc_html_e("Läs mer", "skogsglantan"); ?>
+                                    </span>
+                                </div>
+                            </section>
+                        </a>
                     <?php endwhile; ?>
                 </div>
             <?php endif;
@@ -87,29 +87,29 @@
 
                 <div class="grid grid-3">
                     <?php while ($activities->have_posts()) : $activities->the_post(); ?>
-                        <article class="card">
-                            <!-- <a href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true"> -->
-                            <?php
-                            // Show the featured image if it exists
-                            if (has_post_thumbnail()) :
-                                the_post_thumbnail("card", [
-                                    "alt" => get_the_title()
-                                ]);
-                            endif;
-                            ?>
-                            <div class="card-body">
-                                <!-- Activity title -->
-                                <h3><?php the_title(); ?></h3>
+                        <a href="<?php the_permalink(); ?>" class="card-link" tabindex="-1" aria-hidden="true">
+                            <section class="card">
+                                <?php
+                                // Show the featured image if it exists
+                                if (has_post_thumbnail()) :
+                                    the_post_thumbnail("card", [
+                                        "alt" => get_the_title()
+                                    ]);
+                                endif; ?>
 
-                                <p>
-                                    <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
-                                </p>
-                                <a href="<?php the_permalink(); ?>" class="read-more">
-                                    <?php esc_html_e("Läs mer", "skogsglantan"); ?>
-                                    <span class="screen-reader-text"> <?php the_title(); ?></span>
-                                </a>
-                            </div>
-                        </article>
+                                <div class="card-body">
+                                    <!-- Activity title -->
+                                    <h3><?php the_title(); ?></h3>
+
+                                    <p>
+                                        <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
+                                    </p>
+                                    <span class="read-more">
+                                        <?php esc_html_e("Läs mer", "skogsglantan"); ?>
+                                    </span>
+                                </div>
+                            </section>
+                        </a>
 
                     <?php endwhile; ?>
                 </div>
@@ -154,28 +154,28 @@
 
                 <div class="grid grid-3">
                     <?php while ($news->have_posts()) : $news->the_post(); ?>
-                        <article class="card">
-                            <!-- <a href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true"> -->
-                            <?php
-                            // Shows the featured image if it exists
-                            if (has_post_thumbnail()) :
-                                the_post_thumbnail("card", [
-                                    "alt" => get_the_title()
-                                ]);
-                            endif; ?>
-                            <div class="card-body">
-                                <!-- News title -->
-                                <h3><?php the_title(); ?></h3>
+                        <a href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true" class="card-link">
+                            <section class="card">
+                                <?php
+                                // Shows the featured image if it exists
+                                if (has_post_thumbnail()) :
+                                    the_post_thumbnail("card", [
+                                        "alt" => get_the_title()
+                                    ]);
+                                endif; ?>
+                                <div class="card-body">
+                                    <!-- News title -->
+                                    <h3><?php the_title(); ?></h3>
 
-                                <p>
-                                    <?php echo wp_trim_words(get_the_excerpt(), 30); ?>
-                                </p>
-                                <a href="<?php the_permalink(); ?>" class="read-more">
-                                    <?php esc_html_e("Läs mer", "skogsglantan"); ?>
-                                    <span class="screen-reader-text"> <?php the_title(); ?></span>
-                                </a>
-                            </div>
-                        </article>
+                                    <p>
+                                        <?php echo wp_trim_words(get_the_excerpt(), 30); ?>
+                                    </p>
+                                    <span class="read-more">
+                                        <?php esc_html_e("Läs mer", "skogsglantan"); ?>
+                                    </span>
+                                </div>
+                            </section>
+                        </a>
                     <?php
                     endwhile; ?>
 
