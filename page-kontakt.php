@@ -15,7 +15,7 @@ get_header();
                 <section class="page-header">
                     <h1><?php the_title(); ?></h1>
                     <?php if (has_excerpt()) { ?>
-                        <p><?php the_excerpt(); ?></p>
+                        <?php the_excerpt(); ?>
                     <?php } ?>
                 </section>
 
