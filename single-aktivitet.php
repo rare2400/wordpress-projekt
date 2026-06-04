@@ -7,7 +7,7 @@
 
             <div class="container">
 
-                <div class="single-content">
+                <div class="single-content grid">
                     <!-- Display the post's title and featured image if it exists -->
                     <?php if (has_post_thumbnail()) : ?>
                         <div class="activity-featured-image">
@@ -20,7 +20,7 @@
                     <!-- Info -->
                     <div class="single-meta card card-body">
 
-                        <h2><?php esc_html_e("Information", "skogsglantan"); ?></h2>
+                    <h1>Information</h1>
 
                         <ul>
                             <li><strong>Längd:</strong> <?php echo esc_html(get_field("langd")) ?></li>
@@ -33,13 +33,11 @@
 
                     <!-- Description -->
                     <article class="activity-description card">
-                        <h1><?php the_title(); ?></h1>
+                        <h2><?php the_title(); ?></h2>
 
                         <?php the_content(); ?>
 
                     </article>
-
-
 
                     <!-- CTA -->
                     <div class="booking-cta">
