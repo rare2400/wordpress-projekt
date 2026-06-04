@@ -11,14 +11,12 @@
     <div class="container">
         <?php if (have_posts()) : ?>
 
-            <div class="grid grid-3">
+            <div class="grid grid-2 grid-3">
 
                 <?php while (have_posts()) : the_post(); ?>
 
-                    <article class="card">
-
-                        <a href="<?php the_permalink(); ?>" class="card-link">
-
+                    <a href="<?php the_permalink(); ?>" class="card-link">
+                        <section class="card">
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php the_post_thumbnail("card", [
                                     "alt" => get_the_title()
@@ -37,10 +35,8 @@
                                 </span>
 
                             </div>
-
-                        </a>
-
-                    </article>
+                        </section>
+                    </a>
 
                 <?php endwhile; ?>
 
