@@ -95,12 +95,6 @@ img {
     width: 100%;
 }
 
-.section {
-    padding: var(--space-sm);
-    text-align: center;
-    /* ?? */
-}
-
 /* --------------- Header --------------- */
 header {
     padding: 0 var(--space-sm);
@@ -174,7 +168,7 @@ body:not(.home) main {
 
 /* On the front-page the nav-menu sits over the hero-image, keep it transparent */
 .home #main-nav {
-    background: transparent;
+    background: linear-gradient(0deg, rgba(241, 242, 237, 1) 15%, rgba(184, 177, 163, 0) 100%);
 }
 
 /* State class toggled by JavaScript when the hamburger-icon is clicked */
@@ -332,6 +326,9 @@ body:not(.home) main {
     background: var(--color-white);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow);
+    height: 100%;
+    margin: 0 auto;
+    max-width: 500px;
     overflow: hidden;
 }
 
@@ -359,12 +356,10 @@ body:not(.home) main {
 
 /* Wraps entire card in a link without any link-styling */
 .card-link {
-    text-decoration: none;
+    border-radius: var(--radius-lg);
     color: var(--color-black);
-}
-
-.card-link:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    transition: transform 0.2s ease;
 }
 
 /* --------------- Call-to-action banner --------------- */
@@ -407,31 +402,32 @@ body:not(.home) main {
 
 /* --------------- Single pages (rooms and activities) --------------- */
 .single-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-xs);
-    margin: var(--space-md) 0;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin: var(--space-sm) auto;
+    width: 100%;
 }
 
-.single-content h1 {
-    text-align: center;
-}
 
-.room-description,
-.activity-description {
-    padding: var(--space-sm);
-}
 
 .room-featured-image img,
 .activity-featured-image img {
+    aspect-ratio: 16 / 9;
     border-radius: var(--radius-lg);
-    max-height: 300px;
     object-fit: cover;
     width: 100%;
 }
 
-.single-meta h2 {
+.room-description,
+.activity-description,
+.single-meta {
+    max-width: 100%;
+    width: 100%;
+    padding: var(--space-sm);
+}
+
+.single-meta h1 {
     font-size: 1.2rem;
 }
 
@@ -439,15 +435,19 @@ body:not(.home) main {
     list-style: none;
 }
 
+.single-content h2 {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
 .activity-description ul {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    list-style: none;
+    margin-left: var(--space-md);
 }
 
 .booking-cta {
-    grid-column: span 2;
     margin-top: var(--space-sm);
     text-align: center;
 }
@@ -469,7 +469,7 @@ body:not(.home) main {
 
 /* --------------- News post (single.php) --------------- */
 .post-content {
-    margin: var(--space-md) auto 0;
+    margin: var(--space-sm) auto 0;
 }
 
 .post-content a:hover {
@@ -620,6 +620,25 @@ body:not(.home) main {
     width: 100%;
 }
 
+.wp-block-details {
+    margin: var(--space-xs) auto;
+}
+
+.wp-block-details p {
+    margin: var(--space-xs) var(--space-sm);
+}
+
+/* --------------- Category page --------------- */
+.category-card-link {
+    color: var(--color-black);
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.category-card-link:hover {
+    text-decoration: underline;
+}
+
 /* --------------- Footer --------------- */
 footer {
     background: var(--color-primary);
@@ -627,6 +646,12 @@ footer {
     margin-top: var(--space-md);
     padding: 1.5rem;
     text-align: center;
+}
+
+.footer-heading {
+    font-family: "Playfair Display", serif;;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 /* Single column grid on mobile */
@@ -654,9 +679,13 @@ footer {
         top: 2rem;
     }
 
+    /* On the front-page the nav-menu sits over the hero-image, keep it transparent */
+    .home #main-nav {
+        background: transparent;
+    }
+
     /* Two-column grids */
     .grid-2,
-    .grid-3,
     .grid-4 {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -690,8 +719,7 @@ footer {
 
     /* Single pages - rooms and activities */
     .single-content {
-        gap: var(--space-sm);
-        grid-template-columns: 1fr 1fr;
+        max-width: 900px;
     }
 
     .room-featured-image img,
@@ -706,9 +734,16 @@ footer {
     }
 
     /* News post (single.php) */
-    .post-wrapper {
+    .post-content {
         max-width: 760px;
-        margin: 0 auto;
+        margin: var(--space-md) auto;
+    }
+
+    .post-content ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        margin: 0 var(--space-md) var(--space-sm);
     }
 
     /* Static pages (page.php, om oss, kontakt) */
@@ -741,6 +776,11 @@ footer {
     .grid-list {
         grid-template-columns: 1fr 2fr;
         max-width: 900px;
+    }
+
+    /* Category page */
+    .category-card-link:hover {
+        transform: scale(1.03);
     }
 
     .category-image {
@@ -825,10 +865,14 @@ footer {
         font-size: 2.6rem;
     }
 
+    /* cards */
+    .card-link:hover {
+        box-shadow: var(--shadow-lg);
+        transform: scale(1.03);
+    }
+
     .single-content {
-        grid-template-columns: 2fr 1fr;
         margin: var(--space-md) auto;
-        max-width: 900px;
     }
 
     /* Category */
