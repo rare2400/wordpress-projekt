@@ -28,9 +28,9 @@
                 while (have_posts()) : the_post();
 
                 ?>
-                    <a href="<?php the_permalink(); ?>" class="card-link">
+                    <a href="<?php the_permalink(); ?>" class="category-card-link">
                         <!-- Display every post as a card -->
-                        <article class="card grid grid-list">
+                        <section class="card grid grid-list">
                             <div class="category-image">
                                 <?php
                                 // Check if the post has a thumbnail and display it
@@ -47,7 +47,7 @@
                                     <?php the_excerpt(); ?>
                                 </div>
                             </div>
-                        </article>
+                        </section>
                     </a>
                 <?php
                 endwhile;
@@ -59,9 +59,9 @@
                         "mid_size" => 2,
                         "prev_text" => '
                         <span class="pagination-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="20" height="20" class="icon" aria-hidden="true"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-                            <path d="M73.4 297.4C60.9 309.9 60.9 330.2 73.4 342.7L233.4 502.7C245.9 515.2 266.2 515.2 278.7 502.7C291.2 490.2 291.2 469.9 278.7 457.4L173.3 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L173.3 288L278.7 182.6C291.2 170.1 291.2 149.8 278.7 137.3C266.2 124.8 245.9 124.8 233.4 137.3L73.4 297.3z"/>
-                        </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="20" height="20" class="icon" aria-hidden="true"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                                <path d="M73.4 297.4C60.9 309.9 60.9 330.2 73.4 342.7L233.4 502.7C245.9 515.2 266.2 515.2 278.7 502.7C291.2 490.2 291.2 469.9 278.7 457.4L173.3 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L173.3 288L278.7 182.6C291.2 170.1 291.2 149.8 278.7 137.3C266.2 124.8 245.9 124.8 233.4 137.3L73.4 297.3z"/>
+                            </svg>
                         </span>
                         <span class="pagination-text">Föregående</span>
                     ',
@@ -81,8 +81,8 @@
                 <p class="no-content">
                     <?php esc_html_e("Inga inlägg hittades...", "skogsglantan"); ?>
                 </p>
+            <?php endif; ?>
             </div>
-        <?php endif; ?>
     </div>
 </main>
 
