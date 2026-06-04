@@ -8,11 +8,11 @@
                 <?php endif; ?>
             </div>
 
-            <h3>Öppettider</h3>
+            <p class="footer-heading">Öppettider</p>
             <p>Alla dagar: 08:00 - 20:00</p>
         </div>
         <div>
-            <h3>Kontakt</h3>
+            <p class="footer-heading">Kontakt</p>
             <p>Madesjön 115<br>382 96 Glasriket</p>
             <p>info@skogsglantan.se</p>
             <p>0481-12 34 56</p>
