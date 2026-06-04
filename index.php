@@ -6,7 +6,7 @@
         // Check if there are posts to display
         if (have_posts()) : ?>
 
-            <div class="grid grid-3">
+            <div class="grid grid-2 grid-3">
 
                 <?php while (have_posts()) :
                     the_post();
