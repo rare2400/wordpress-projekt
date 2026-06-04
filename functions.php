@@ -8,6 +8,9 @@ add_theme_support("post-thumbnails");
 // Activate page excerpt
 add_post_type_support("page", "excerpt");
 
+// Disable automatic image size attributes to prevent layout issues with custom image sizes
+add_filter('wp_img_tag_add_auto_sizes', '__return_false');
+
 // Custom logo support (in header.php)
 function skogsglantan_theme_setup()
 {
