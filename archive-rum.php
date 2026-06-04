@@ -20,10 +20,9 @@
                 // Loop through all posts and fetch data
                 while (have_posts()) : the_post(); ?>
 
-                    <article class="card">
-                        <!-- Makes the card clickable by wrapping it in a link to the post permalink -->
-                        <a href="<?php the_permalink(); ?>" class="card-link">
-
+                    <!-- Makes the card clickable by wrapping it in a link to the post permalink -->
+                    <a href="<?php the_permalink(); ?>" class="card-link">
+                        <section class="card">
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php the_post_thumbnail("card", [
                                     "alt" => get_the_title()
@@ -37,12 +36,12 @@
                                     <?php echo esc_html(wp_trim_words(get_the_excerpt(), 15)); ?>
                                 </p>
 
-                                <?php esc_html_e("Läs mer", "skogsglantan"); ?>
-
+                                <span class="read-more">
+                                    <?php esc_html_e("Läs mer", "skogsglantan"); ?>
+                                </span>
                             </div>
-                        </a>
-
-                    </article>
+                        </section>
+                    </a>
 
                 <?php endwhile; ?>
 
