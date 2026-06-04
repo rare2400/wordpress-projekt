@@ -10,7 +10,7 @@
                 while (have_posts()) : the_post();
 
             ?>
-                    <div class="post-content card">
+                    <article class="post-content card">
                         <div class="post-image">
                             <?php
                             // Check if the post has a thumbnail and display it
@@ -45,7 +45,7 @@
                             <?php endif; ?>
                         </div>
 
-                    </div>
+                    </article>
             <?php
                 endwhile;
             endif;
